@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Copyright 2004 The Apache Software Foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <display-name>DO NOT CLICK ON "UNDEPLOY" OR YOU'LL FK US OVER</display-name>
+    <description>
+      Test Tomcat Connection to mySQL DB
+    </description>
+
+
+  <!-- Define servlets that are included in the example application -->
+
+  <resource-ref>
+  	<description>
+        	Resource reference to a factory for java.sql.Connection
+                instances that may be used for talking to a particular
+                database that
+                is configured in the server.xml file.
+        </description>
+               <res-ref-name>
+               		jdbc/TestDB
+               </res-ref-name>
+               <res-type>
+                        javax.sql.DataSource
+               </res-type>
+               <res-auth>
+                        Container
+               </res-auth>
+  </resource-ref>
+
+  <servlet>
+    <servlet-name>TomcatFormServlet</servlet-name>
+    <servlet-class>TomcatForm</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SearchResultServlet</servlet-name>
+    <servlet-class>SearchResult</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdvancedSearchServlet</servlet-name>
+    <servlet-class>AdvancedSearch</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SortByServlet</servlet-name>
+    <servlet-class>SortBy</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MovieStarDetailsServlet</servlet-name>
+    <servlet-class>MovieStarDetails</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PaginationServlet</servlet-name>
+    <servlet-class>Pagination</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <servlet-class>AddToCart</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <servlet-class>Checkout</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>DirectToServlet</servlet-name>
+    <servlet-class>DirectTo</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>DashboardServlet</servlet-name>
+    <servlet-class>Dashboard</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AutocompleteSearchServlet</servlet-name>
+    <servlet-class>AutocompleteSearch</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>AutopopupMovieServlet</servlet-name>
+    <servlet-class>AutopopupMovie</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>TomcatFormServlet</servlet-name>
+    <url-pattern>/servlet/TomcatForm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchResultServlet</servlet-name>
+    <url-pattern>/servlet/SearchResult</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdvancedSearchServlet</servlet-name>
+    <url-pattern>/servlet/AdvancedSearch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SortByServlet</servlet-name>
+    <url-pattern>/servlet/SortBy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MovieStarDetailsServlet</servlet-name>
+    <url-pattern>/servlet/MovieStarDetails</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PaginationServlet</servlet-name>
+    <url-pattern>/servlet/Pagination</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/servlet/AddToCart</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern>/servlet/Checkout</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>DirectToServlet</servlet-name>
+    <url-pattern>/servlet/DirectTo</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>DashboardServlet</servlet-name>
+    <url-pattern>/servlet/Dashboard</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AutocompleteSearchServlet</servlet-name>
+    <url-pattern>/servlet/AutocompleteSearch</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>AutopopupMovieServlet</servlet-name>
+    <url-pattern>/servlet/AutopopupMovie</url-pattern>
+  </servlet-mapping>
+
+<!--********COMMENT TO ENABLE HTTPS***********************-->
+<!-- <security-constraint>
+   <web-resource-collection>
+     <web-resource-name>HTTPSOnly</web-resource-name>
+     <url-pattern>/*</url-pattern>
+   </web-resource-collection>
+ <user-data-constraint>
+     <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+   </user-data-constraint>
+ </security-constraint>
+-->
+</web-app>

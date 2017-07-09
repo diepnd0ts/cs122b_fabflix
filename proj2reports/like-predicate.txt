@@ -1,0 +1,20 @@
+Paul An
+Bryan Diep
+Anthony Gomez
+
+
+This is the README for how we used the LIKE predicate in our codebase.
+
+Files that use LIKE:
+        SearchResult.java
+                line 30 ex: %searchResult%
+                line 35 ex: %searchResult%
+
+                From main_page.jsp, we allow the user to input a search from an input form. In SearchResult.java, we get the parameter from the input form and pass it into the query.
+
+        AdvancedSearch.java
+                line 35 ex: %title%
+
+                Also from main_page.jsp if the user clicks the Advanced Search button, we direct them to our advSearch.jsp file. The user can type in any combination of Title, Year, Director, First Name, Last Name and pass that data into AdvancedSearch.java
+
+In both cases, we used '%PATTERN%' to have search results display all movies with titles that contain the given patten.
